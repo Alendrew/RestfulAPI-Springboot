@@ -29,13 +29,13 @@ O Web Service consiste em um CRUD baseado no tema de uma loja simples.
 Pré-requisitos: JavaSE 17
 
 ```bash
-# clonar repositório
-git clone https://github.com/Alendrew/workshop-springboot3-jpa.git
+# Clonar repositório
+git clone https://github.com/Alendrew/Learning-Springboot-JPA-Hibernate.git
 
-# entrar na pasta do projeto back end
-cd workshop-springboot3-jpa
+# Entrar na pasta do projeto back end
+cd Learning-Springboot-JPA-Hibernate
 
-# executar o projeto
+# Executar o projeto
 ./mvnw spring-boot:run
 ```
 
