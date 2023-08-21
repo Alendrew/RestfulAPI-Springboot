@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.entities.Order;
@@ -22,8 +25,9 @@ import com.educandoweb.course.repositories.ProductRepository;
 import com.educandoweb.course.repositories.UserRepository;
 
 @Configuration
+@EnableWebMvc
 @Profile("test")
-public class TestConfig implements CommandLineRunner {
+public class TestConfig implements CommandLineRunner, WebMvcConfigurer {
 
 	@Autowired
 	private UserRepository userRepository;
@@ -39,20 +43,27 @@ public class TestConfig implements CommandLineRunner {
 	
 	@Autowired 
 	private OrderItemRepository orderItemRepository;
+	
+	public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("*")
+                .allowedHeaders("*")
+                .allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS");
+    }
 
 
 	@Override
 	public void run(String... args) throws Exception {
 		
-		Category cat1 = new Category(null, "Electronics");
-		Category cat2 = new Category(null, "Books");
-		Category cat3 = new Category(null, "Computers");
+		Category cat1 = new Category(null, "Eletrônicos");
+		Category cat2 = new Category(null, "Livros");
+		Category cat3 = new Category(null, "Computadores");
 		
-		Product p1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "");
-		Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "");
-		Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
-		Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
-		Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
+		Product p1 = new Product(null, "Código Code", "Lorem ipsum dolor sit amet, consectetur.", 90.5, "https://altabooks.com.br/wp-content/uploads/2021/07/Codigo_Limpo-scaled.jpg");
+		Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, "https://a-static.mlcdn.com.br/450x450/smart-tv-43-uhd-4k-led-tcl-43p615-va-60hz-android-wi-fi-bluetooth-hdr-3-hdmi-1-usb/magazineluiza/193445000/8c5a9431466e97ea8a82a98b326024ea.jpg");
+		Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202206?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664497359481");
+		Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "https://images.kabum.com.br/produtos/fotos/sync_mirakl/271830/PC-Gamer-Completo-F-cil-I7-16GB-GTX-1050TI-4GB-1TB-Windows-10-Preto-Monitor-21-5-Polegadas-Kit-Gamer-Teclado-Mouse-E-Headset-Fonte-500W_1686167950_g.jpg");
+		Product p5 = new Product(null, "Padrões de Projeto", "Cras fringilla convallis sem vel faucibus.", 100.99, "https://m.media-amazon.com/images/I/51rDIJrBAbL.jpg");
 		
 		
 		categoryRepository.saveAll(Arrays.asList(cat1,cat2,cat3));
