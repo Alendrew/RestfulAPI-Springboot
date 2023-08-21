@@ -34,7 +34,7 @@ Pré-requisitos: JavaSE 17
 git clone https://github.com/Alendrew/RESTfulAPI-Springboot.git
 
 # Entre na pasta do Projeto
-cd RESTfulAPI_Springboot
+cd RESTfulAPI-Springboot
 
 # Execute o projeto
 ./mvnw spring-boot:run
