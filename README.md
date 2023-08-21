@@ -23,9 +23,16 @@ A API permite executar operações básicas de uma loja, como adicionar, visuali
 - Maven
 - SQL
 - H2 Database
+- Heroku
 - Open API & Swagger
 
 # Como executar o projeto
+
+## API
+
+https://apirestful-loja-03f61481ea62.herokuapp.com/
+
+## Máquina local
  
 Pré-requisitos: JavaSE 17
 
