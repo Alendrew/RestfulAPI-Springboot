@@ -2,7 +2,7 @@
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Alendrew/workshop-springboot3-jpa/tree/main) 
 
 # Sobre o projeto
-Nesse projeto foi construido uma API RESTful utilizando Springboot
+Nesse projeto foi construida uma API RESTful utilizando Springboot
 
 A API permite executar operações básicas de uma loja, como adicionar, visualizar, atualizar e remover informações (CRUD).
 
