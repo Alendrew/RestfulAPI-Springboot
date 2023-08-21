@@ -1,10 +1,10 @@
-# Learning Springboot & JPA / Hibernate 
+# RESTfulAPI With Springboot 
 [![NPM](https://img.shields.io/npm/l/react)](https://github.com/Alendrew/workshop-springboot3-jpa/tree/main) 
 
 # Sobre o projeto
-Nesse projeto foi construido um Web Service utilizando Springboot, JPA / Hibernate.
+Nesse projeto foi construido uma API RESTful utilizando Springboot
 
-O Web Service consiste em um CRUD baseado no tema de uma loja simples.
+A API permite executar operações básicas de uma loja, como adicionar, visualizar, atualizar e remover informações (CRUD).
 
 ## Modelo conceitual
 ![Modelo Conceitual](https://github.com/Alendrew/Learning-Springboot-JPA-Hibernate/blob/main/assets/Domain_Model.png)
@@ -21,7 +21,8 @@ O Web Service consiste em um CRUD baseado no tema de uma loja simples.
 - Spring Boot
 - JPA / Hibernate
 - Maven
-- H2 Database Engine
+- SQL
+- H2 Database
 - Open API & Swagger
 
 # Como executar o projeto
@@ -29,13 +30,13 @@ O Web Service consiste em um CRUD baseado no tema de uma loja simples.
 Pré-requisitos: JavaSE 17
 
 ```bash
-# Clonar repositório
-git clone https://github.com/Alendrew/Learning-Springboot-JPA-Hibernate.git
+# Clone o repositório
+git clone https://github.com/Alendrew/RESTfulAPI-Springboot.git
 
-# Entrar na pasta do projeto back end
-cd Learning-Springboot-JPA-Hibernate
+# Entre na pasta do Projeto
+cd RESTfulAPI_Springboot
 
-# Executar o projeto
+# Execute o projeto
 ./mvnw spring-boot:run
 ```
 
